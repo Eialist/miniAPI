@@ -5,12 +5,14 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "devStart": "nodemon server.js"
+    "devStart": "nodemon index.js",
+    "start": "index.js"
   },
   "author": "Erica Eklund",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongodb": "^6.5.0"
   },
   "devDependencies": {
     "dotenv": "^16.4.5",
