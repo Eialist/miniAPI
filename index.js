@@ -6,7 +6,7 @@ dotenv.config()
 
 const app = express();
 const PORT = process.env.PORT || 3000
-app.use(express.json())
+
 
 const uri = process.env.MONGO_URI;
 const client = new MongoClient(uri, console.log("hello"));
@@ -49,15 +49,11 @@ app.post("/api/addWord/", async (req, res) => {
     res.status(200).send({ msg: 'Nytt ord tillagt' });
 })
 
-// async function connectToDB() {
-await client.connect()
-    .then(app.listen(PORT, () => {
-        console.log("listening for requests");
-    }))
+async function connectToDB() {
+    await client.connect()
+        .then(app.listen(PORT, () => {
+            console.log("listening for requests");
+        }))
 
-// }
-// connectToDB();
-
-app.listen(PORT, () => {
-    console.log("listening for requests");
-})
+}
+connectToDB();
