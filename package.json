@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "devStart": "nodemon index.js",
-    "start": "index.js"
+    "start": "set PORT=5789 && index.js"
   },
   "author": "Erica Eklund",
   "license": "ISC",
