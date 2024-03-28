@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 3000
 const uri = process.env.MONGO_URI;
 const client = new MongoClient(uri, console.log("hello"));
 let db = undefined;
+app.use(express.json());
 
 
 function fetchDB() {
