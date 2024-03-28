@@ -49,11 +49,11 @@ app.post("/api/addWord/", async (req, res) => {
     res.status(200).send({ msg: 'Nytt ord tillagt' });
 })
 
-async function connectToDB() {
-    await client.connect()
-        .then(app.listen(PORT, () => {
-            console.log("listening for requests");
-        }))
+// async function connectToDB() {
+await client.connect()
+    .then(app.listen(PORT, () => {
+        console.log("listening for requests");
+    }))
 
-}
-connectToDB();
+// }
+// connectToDB();
