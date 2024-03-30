@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "devStart": "nodemon index.js",
-    "start": "node index.js"
+    "start": "index.js"
   },
   "author": "Erica Eklund",
   "license": "ISC",
