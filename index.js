@@ -51,10 +51,13 @@ app.post("/api/addWord/", async (req, res) => {
 })
 
 async function connectToDB() {
-    await client.connect()
-        .then(app.listen(PORT, () => {
-            console.log("listening for requests");
-        }))
-
+    try {
+        await client.connect()
+            .then(app.listen(PORT, () => {
+                console.log("listening for requests");
+            }))
+    } catch (error) {
+        console.error('Error connecting to database', error)
+    }
 }
 connectToDB();
