@@ -15,13 +15,13 @@ app.use(express.json());
 
 
 function fetchDB() {
-    db = client.db("esl_database");
+    db = client.db("authorsAndBooks");
     console.log(db.name)
     return db;
 }
 
 app.get("/items", async (req, res) => {
-    let data = await fetchDB().collection("year4").find().toArray();
+    let data = await fetchDB().collection("authors").find().toArray();
     console.log(data);
     res.send(data);
     return data;
